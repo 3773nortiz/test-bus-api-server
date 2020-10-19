@@ -4,7 +4,7 @@
    "description": "",
    "main": "handler.js",
    "scripts": {
-      "start": "NODE_OPTIONS=--max_old_space_size=8192  sls offline",
+      "start": "NODE_OPTIONS=--max_old_space_size=8192 serverless offline",
       "test": "serverless-bundle test",
       "test:watch": "serverless-bundle test --watch"
    },

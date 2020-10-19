@@ -24,7 +24,6 @@ export const getBusStops = async (event: any, context: any) => {
   // should move in middleware
   const auth = new Authenticate(event.headers);
   const authorised = await auth.authorizeApiKey();
-  return error unauthorised
   if (!authorised) return unauthorised();
 
   const { lat, lng } = event.queryStringParameters ?? {};

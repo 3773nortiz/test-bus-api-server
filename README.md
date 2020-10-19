@@ -1,11 +1,19 @@
 # Bus System API
-Steps to run this project:
 
-1. Run `npm install -g serverless` command
-1. Run `npm install` command
-3. Run `npm start` command
+### Setup
 
-Sample API Key: 7rfii1iq9c07q5jjrxm958b118ov0a
-Should be added on header: `x-api-key`
+1. Clone this repo
+2. Run: `npm install`
+3. Fill-in offline.yml with correct credentials
 
-Add offline.yml to have environment variables
+### Running
+
+```
+npm start
+```
+
+### Running in local
+
+1. Install and Run MySQL instance
+
+2. Create schema `bus-system-db`. This will be the db_name to be added in offline.yml

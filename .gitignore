@@ -11,5 +11,4 @@ node_modules/
 build/
 tmp/
 temp/
-offline.yml
 .webpack/

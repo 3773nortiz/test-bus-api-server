@@ -1,0 +1,7 @@
+ssm:
+  /db/host: ''
+  /db/port: ''
+  /db/username: ''
+  /db/password: ''
+  /db/name: ''
+  /db/protocol: ''
