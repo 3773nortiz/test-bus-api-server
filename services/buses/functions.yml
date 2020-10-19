@@ -1,0 +1,7 @@
+getBuses:
+  handler: ${self:custom.src}/buses.getBuses
+  events:
+    - http:
+        path: ${self:custom.services.buses}
+        method: get
+        cors: ${self:custom.cors}

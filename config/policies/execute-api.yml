@@ -1,0 +1,5 @@
+Effect: Allow
+Action:
+  - execute-api:Invoke
+  - execute-api:ManageConnections
+Resource: '*'

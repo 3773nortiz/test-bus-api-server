@@ -1,0 +1,14 @@
+getBusStops:
+  handler: ${self:custom.src}/bus-stops.getBusStops
+  events:
+    - http:
+        path: ${self:custom.services.busStops}
+        method: get
+        cors: ${self:custom.cors}
+getBusStopAvailableTime:
+  handler: ${self:custom.src}/bus-stops.getBusStopAvailableTime
+  events:
+    - http:
+        path: ${self:custom.services.busStops}/{id}
+        method: get
+        cors: ${self:custom.cors}

@@ -1,0 +1,56 @@
+default: &default
+  src: src/handlers
+  serverless-offline:
+    port: 3001
+  cors:
+    origin: '*'
+    headers:
+      - X-ENVIRONMENT
+      - X-environment
+      - X-API-KEY
+      - X-api-key
+      - Content-Type
+    allowCredentials: true
+  middleware:
+    pre:
+      - ${self:custom.src}/auth.authenticate
+
+customDomainDefault: &customDomainDefault
+  basePath: ${self:provider.basePath, ''}
+  endpointType: 'edge'
+  createRoute53Record: false
+
+services: &services # for staging and prod
+  buses: ''
+  busStops: ''
+
+local:
+  <<: *default
+  serverless-offline-sqs:
+    autoCreate: true # create queue if not exists
+    apiVersion: '2012-11-05'
+    region: ${self:provider.region}
+    accessKeyId: root
+    secretAccessKey: root
+    skipCacheInvalidation: false
+  services:
+    buses: 'buses'
+    busStops: 'bus-stops'
+
+staging:
+  <<: *default
+  customDomain:
+    domainName: #need to add
+    stage: dev
+    <<: *customDomainDefault
+  services:
+    <<: *services
+
+prod:
+  <<: *default
+  customDomain:
+    domainName: #need to add
+    stage: prod
+    <<: *customDomainDefault
+  services:
+    <<: *services

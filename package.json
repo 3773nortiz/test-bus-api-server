@@ -1,0 +1,47 @@
+{
+   "name": "bus-system-api-server",
+   "version": "0.0.1",
+   "description": "",
+   "main": "handler.js",
+   "scripts": {
+      "start": "NODE_OPTIONS=--max_old_space_size=8192  sls offline",
+      "test": "serverless-bundle test",
+      "test:watch": "serverless-bundle test --watch"
+   },
+   "devDependencies": {
+      "@types/aws-lambda": "^8.10.50",
+      "@types/faker": "^4.1.12",
+      "@types/node": "^13.11.0",
+      "@typescript-eslint/eslint-plugin": "^2.26.0",
+      "aws-sdk": "^2.655.0",
+      "eslint": "^6.8.0",
+      "eslint-config-prettier": "^6.10.0",
+      "eslint-config-standard": "^14.1.0",
+      "eslint-config-standard-with-typescript": "^15.0.0",
+      "eslint-plugin-import": "^2.20.1",
+      "eslint-plugin-jest": "^23.8.2",
+      "eslint-plugin-node": "^11.0.0",
+      "eslint-plugin-prettier": "^3.1.2",
+      "eslint-plugin-promise": "^4.2.1",
+      "eslint-plugin-sonarjs": "^0.5.0",
+      "eslint-plugin-standard": "^4.0.1",
+      "eslint-plugin-unicorn": "^17.2.0",
+      "prettier": "^1.19.1",
+      "faker": "^4.1.0",
+      "serverless": "^1.83.0",
+      "serverless-bundle": "1.4.0-beta.2",
+      "serverless-middleware": "0.0.10",
+      "serverless-offline": "^5.12.1",
+      "serverless-offline-aws-ssm": "^1.0.0",
+      "typescript": "^3.8.2"
+   },
+   "dependencies": {
+      "mongodb": "^3.6.2",
+      "reflect-metadata": "^0.1.10",
+      "saslprep": "^1.0.3",
+      "to": "^0.2.9",
+      "typeorm": "0.2.28",
+      "typeorm-naming-strategies": "^2.0.0",
+      "update": "^0.7.4"
+   }
+}

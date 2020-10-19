@@ -1,0 +1,24 @@
+service: bus-system-api-server-bus-stops
+
+plugins:
+  - serverless-bundle
+
+provider:
+  name: aws
+  timeout: 30
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'staging'}
+  region: eu-central-1
+  environment:
+    DB_HOST: ${ssm:/db/host}
+    DB_PORT: ${ssm:/db/port}
+    DB_USERNAME: ${ssm:/db/username}
+    DB_PASSWORD: ${ssm:/db/password~true}
+    DB_NAME: ${ssm:/db/name}
+    DB_PROTOCOL: ${ssm:/db/protocol}
+  basePath: bus-stops
+
+custom: ${file(../../config/custom.yml):${self:provider.stage}}
+
+functions:
+  - ${file(./functions.yml)}

@@ -1,0 +1,15 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+offline.yml
+.webpack/
